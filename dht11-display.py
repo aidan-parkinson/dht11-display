@@ -1,14 +1,15 @@
 import adafruit_dht
 import time
-import RPi.GPIO as GPIO
+#import RPi.GPIO as GPIO
+import board
 import json
 import datetime
 
-pin = 4
+pin = board.D4
 
-GPIO.setup(pin, GPIO.IN)
+#GPIO.setup(pin, GPIO.IN)
 
-dht_device = adafruit_dht.DHT11(GPIO.input(pin))
+dht_device = adafruit_dht.DHT11(pin)
 
 while True:
     humidity = dht_device.humidity
@@ -17,9 +18,5 @@ while True:
     reading = json.dumps({'humidity': humidity, 'temperature': temperature, 'datetime': datetime.utcnow()})
 
     print(reading, sort_keys=True, indent=4)
-    #if humidity is not None and temperature is not None:
-    #    print("Temp=(0:0.1f)C Humidity=(1:0.1f)%".format(temperature, humidity))
-    #else:
-    #    print("Sensor failure. Check wiring.")
 
     time.sleep(3);
