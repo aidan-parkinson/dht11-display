@@ -9,11 +9,16 @@ pin = board.D4
 dht_device = adafruit_dht.DHT11(pin)
 
 while True:
-    humidity = dht_device.humidity
-    temperature = dht_device.temperature
 
-    reading = json.dumps({'humidity': humidity, 'temperature': temperature, 'datetime': datetime.now()}, sort_keys=True, indent=4, default=str)
+    try:
+        humidity = dht_device.humidity
+        temperature = dht_device.temperature
 
-    print(reading)
+        reading = json.dumps({'humidity': humidity, 'temperature': temperature, 'datetime': datetime.now()}, sort_keys=True, indent=4, default=str)
 
-    time.sleep(3);
+        print(reading)
+
+    except RunTimeError:
+        print('Failed')
+
+    time.sleep(5);
