@@ -14,7 +14,7 @@ while True:
     humidity = dht_device.humidity
     temperature = dht_device.temperature
 
-    reading = json.dumps(['humidity': humidity, 'temperature': temperature, 'datetime', datetime.datetime])
+    reading = json.dumps({'humidity': humidity, 'temperature': temperature, 'datetime', datetime.utcnow()})
 
     print(reading, sort_keys=True, indent=4)
     #if humidity is not None and temperature is not None:
