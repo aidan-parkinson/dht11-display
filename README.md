@@ -51,5 +51,5 @@ source venv/bin/activate
 ```
 Run the `dht11-display.py` controller
 ```
-sudo python3 dht11-display.py
+python3 dht11-display.py
 ```
