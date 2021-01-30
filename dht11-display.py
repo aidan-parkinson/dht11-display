@@ -1,8 +1,10 @@
 import adafruit_dht
 import time
-import machine
+import Rpi.GPIO as GPIO
 
-dht_device = adafruit_dht.DHT11(machine.Pin(4))
+setup = GPIO.setup(4, GPIO.IN)
+
+dht_device = adafruit_dht.DHT11(GPIO.input(setup))
 
 while True:
     humidity, temperature = (dht_device.humidity, dht_device.temperature)
