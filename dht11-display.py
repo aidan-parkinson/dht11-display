@@ -12,8 +12,8 @@ while True:
     humidity = dht_device.humidity
     temperature = dht_device.temperature
 
-    reading = json.dumps({'humidity': humidity, 'temperature': temperature, 'datetime': datetime.now()})
+    reading = json.dumps({'humidity': humidity, 'temperature': temperature, 'datetime': datetime.now()}, sort_keys=True, indent=4, default=str)
 
-    print(reading, sort_keys=True, indent=4)
+    print(reading)
 
     time.sleep(3);
