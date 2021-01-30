@@ -2,7 +2,7 @@ import adafruit_dht
 import time
 import board
 import json
-import datetime
+from datetime import datetime
 
 pin = board.D4
 
