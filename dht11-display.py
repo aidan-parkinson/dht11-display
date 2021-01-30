@@ -1,6 +1,6 @@
 import adafruit_dht
 import time
-import Rpi.GPIO as GPIO
+import RPi.GPIO as GPIO
 
 setup = GPIO.setup(4, GPIO.IN)
 
