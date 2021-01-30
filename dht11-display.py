@@ -18,7 +18,7 @@ while True:
 
         print(reading)
 
-    except RunTimeError:
+    except RuntimeError:
         print('Failed')
 
     time.sleep(5);
