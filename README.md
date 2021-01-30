@@ -4,7 +4,7 @@ A python executable for displaying in a terminal temperature and humidity values
 ## Install device dependencies
 ```
 sudo apt update
-sudo apt-get install virtualenv python3-pip
+sudo apt-get install gpiod virtualenv python3-pip
 pip3 --version
 ```
 
