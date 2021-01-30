@@ -1,8 +1,8 @@
 import adafruit_dht
 import time
-from board import 4
+import machine
 
-dht_device = adafruit_dht.DHT11(4)
+dht_device = adafruit_dht.DHT11(machine.Pin(4))
 
 while True:
     humidity, temperature = (dht_device.humidity, dht_device.temperature)
