@@ -33,7 +33,7 @@ source venv/bin/activate
 ```
 Install project dependencies
 ```
-sudo pip3 install Adafruit_DHT
+pip3 install -r requirements.txt
 ```
 Deactivate the virtual environment
 ```

@@ -1,11 +1,11 @@
-import Adafruit_DHT
+import adafruit_dht
 import time
+from board import 4
 
-DHT_SENSOR = Adafruit_DHT.DHT11
-DHT_PIN = 4
+dht_device = adafruit_dht.DHT11(4)
 
 while True:
-    humidity, temperature = Adafruit_DHT.read(DHT_SENSOR, DHT_PIN)
+    humidity, temperature = (dht_device.humidity, dht_device.temperature)
     if humidity is not None and temperature is not None:
         print("Temp=(0:0.1f)C Humidity=(1:0.1f)%".format(temperature, humidity))
     else:
